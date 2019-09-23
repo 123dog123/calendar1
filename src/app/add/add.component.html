@@ -1,0 +1,132 @@
+<div class ="container-fluid mb 5">
+    <h1>Calendar</h1>
+    <form #eventForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label>Event Name</label>
+        <input type = "text" class = "form-control" name = "eventName" [(ngModel)] = "eventModel.title">
+      </div>
+  
+      <div class="form-group">
+        <label>Event Description</label>
+        <input type = "text" class = "form-control" name = "description" [(ngModel)] = "eventModel.description">
+      </div>
+
+      <h6>Start Date:</h6> 
+      <form class="form-inline" action="/action_page.php">
+          <div class="form-group">
+          <select class="custom-select" name="selectStartYear" [(ngModel)] = "selectStartYear">
+            <option selected>Starting Year</option>
+            <option *ngFor="let year of years">{{year}}</option>
+          </select>
+          
+        </div>
+
+        <div class="form-group">
+          <select class="custom-select" name="selectStartMonth" [(ngModel)] = "selectStartMonth">
+            <option selected>Starting Month</option>
+              <option *ngFor="let month of months">{{month}}</option>
+            </select>
+          </div>
+              
+        <div class="form-group">
+          <select class="custom-select" name="selectStartDay" [(ngModel)] = "selectStartDay">
+            <option selected>Starting Day</option>
+              <option *ngFor="let day of days">{{day}}</option>
+            </select>
+          </div>
+        </form>
+
+        <br>
+        <h6>Start Time:</h6> 
+        <form class="form-inline" action="/action_page.php">
+            <div class="form-group">
+            <select class="custom-select" name="selectStartHour" [(ngModel)] = "selectStartHour">
+              <option selected>Hour</option>
+              <option *ngFor="let hour of hours">{{hour}}</option>
+            </select>
+            
+          </div>
+  
+          <div class="form-group">
+            <select class="custom-select" name="selectStartMinute" [(ngModel)] = "selectStartMinute">
+              <option selected>Minute</option>
+                <option *ngFor="let min of mins">{{min}}</option>
+              </select>
+            </div>
+                
+          <div class="form-group">
+            <select class="custom-select" name="selectStartPeriod" [(ngModel)] = "selectStartPeriod">
+                <option *ngFor="let period of periods">{{period}}</option>
+              </select>
+            </div>
+          </form>
+        <br>
+        
+        <h6>End Date:</h6>
+        <form class="form-inline" action="/action_page.php">
+
+          <div class="form-group">
+              <select class="custom-select" name="selectEndYear" [(ngModel)] = "selectEndYear">
+                <option selected>Ending Year</option>
+                <option *ngFor="let year of years">{{year}}</option>
+              </select>
+            </div>
+      
+                
+            <div class="form-group">
+              <select class="custom-select" name="selectEndMonth" [(ngModel)] = "selectEndMonth">
+                <option selected>Ending Month</option>
+                  <option *ngFor="let month of months">{{month}}</option>
+                </select>
+              </div>
+      
+                  
+            <div class="form-group">
+              <select class="custom-select" name="selectEndDay" [(ngModel)] = "selectEndDay">
+                <option selected>Ending Day</option>
+                  <option *ngFor="let day of days">{{day}}</option>
+                </select>
+              </div>
+          </form>
+      <br>
+
+      <h6>End Time:</h6> 
+        <form class="form-inline" action="/action_page.php">
+            <div class="form-group">
+            <select class="custom-select" name="selectStartHour" [(ngModel)] = "selectEndHour">
+              <option selected>Hour</option>
+              <option *ngFor="let hour of hours">{{hour}}</option>
+            </select>
+            
+          </div>
+  
+          <div class="form-group">
+            <select class="custom-select" name="selectStartMinute" [(ngModel)] = "selectEndMinute">
+              <option selected>Minute</option>
+                <option *ngFor="let min of mins">{{min}}</option>
+              </select>
+            </div>
+                
+          <div class="form-group">
+            <select class="custom-select" name="selectStartPeriod" [(ngModel)] = "selectEndPeriod">
+                <option *ngFor="let period of periods">{{period}}</option>
+              </select>
+            </div>
+          </form>
+        <br>
+  
+      <div class="form-group">
+        <label>Username</label>
+        <input type = "text" class = "form-control" name = "username" [(ngModel)] = "eventModel.username">
+      </div>
+
+
+  
+  
+      <button class="btn btn-primary" type = "Submit">Submit</button>
+  
+    </form>
+  
+  </div>
+  
+   
